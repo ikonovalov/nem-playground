@@ -1,0 +1,13 @@
+{
+  "name": "NEM_Playgroung",
+  "author": "Igor Konovalov",
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "nem-sdk": "^1.6.2"
+  }
+}
