@@ -3,6 +3,7 @@ const model = nem.model;
 const defaultTestnet = model.nodes.defaultTestnet;
 const defaultPort = model.nodes.defaultPort;
 const endpoint = model.objects.create("endpoint")(defaultTestnet, defaultPort);
+const testnetId = nem.model.network.data.testnet.id;
 
 const requests = nem.com.requests;
 requests.chain.height(endpoint).then(res => {
@@ -26,9 +27,11 @@ let showAccountInfo = (address) => {
 };
 
 let accounts = {
-    primary: 'TAR5UOYLFHCJZAIW3DFQS2GSRPGIFZCLVYP2LSCD',
-    w_one_multisign: 'TAE2PYP2FBQRAOJRQ2KDK5N7FNCBPYZYV7QHKBEI'
+    w_one: {
+        primary: 'TAR5UOYLFHCJZAIW3DFQS2GSRPGIFZCLVYP2LSCD',
+        multisign: 'TAE2PYP2FBQRAOJRQ2KDK5N7FNCBPYZYV7QHKBEI'
+    }
 };
 
-showAccountInfo(accounts.primary);
-showAccountInfo(accounts.w_one_multisign);
+showAccountInfo(accounts.w_one.primary);
+showAccountInfo(accounts.w_one.multisign);
